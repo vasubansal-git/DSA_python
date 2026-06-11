@@ -9,7 +9,7 @@
 # Solution using hash_list
 
 # Brute force: Tc: O(n X m), Sc: O(1)
-""" 
+
 n = [5, 3, 2, 2, 1, 5, 5, 7, 5, 10]
 m = [10, 111, 1, 9, 5, 67, 2]
 
@@ -32,7 +32,6 @@ for x in m:
         print(0)
     else:
         print(hash_list[x])
-"""
 
 # solution using Dictionary:
 """ 
@@ -42,3 +41,22 @@ m = [10, 111, 1, 9, 5, 67, 2]
 
 #Q2: Character hashing:
 
+s = "azyxyyzaaaa"
+q = ["d", "a", "y", "x"]
+
+hash_list = [0] * 27
+
+for ch in s:
+    ascii_value = ord(ch)
+    index = ascii_value - 97
+    hash_list[index] += 1
+
+for ch in q:
+    ascii_valueQ = ord(ch)
+    index = ascii_valueQ - 97
+    print(hash_list[index])
+
+#Tc: O(n + m)
+#Sc: O(26) -> O(1)
+
+#Note: We can use list hashing in case of small and big letters but in mixed-up of symbols and letters we will use dictionary hashing.
