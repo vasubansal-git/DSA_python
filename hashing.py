@@ -59,4 +59,15 @@ for ch in q:
 #Tc: O(n + m)
 #Sc: O(26) -> O(1)
 
+# Mixed-up hashing:
+
+string = "Aa%S$p%"
+
+hash_dict = {}
+
+for ch in string:
+    hash_dict[ch] = hash_dict.get(ch, 0) + 1
+
+print(hash_dict)
+
 #Note: We can use list hashing in case of small and big letters but in mixed-up of symbols and letters we will use dictionary hashing.
